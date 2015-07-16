@@ -20,7 +20,7 @@ function doOnLoad() {
 			//alert("submit");
 			var url="login/check";
 			LoginForm.send(url, function(loader, response) {
-				alert(loader.xmlDoc.responseText);
+				alert(response);
 			});
 		}else if(button_id == "Reset"){
 			LoginForm.clear();
