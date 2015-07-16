@@ -41,3 +41,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+src/main/webapp/dhtmlx/dhtmlxAccordion/codebase/dhtmlxcommon.js
+*.gif
+*.css
+*.png
+*.txt
+*.js
+*.html
+*.map
+*.chm
+*.xap
+*.xml
+*.swf
+*.properties
