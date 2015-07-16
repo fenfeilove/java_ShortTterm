@@ -21,7 +21,11 @@ public class TreeController {
 	@RequestMapping(value="/loader",method=RequestMethod.GET)
 	@ResponseBody
 	public Object tree_loader (HttpServletRequest request,Model model){
-		return "{id:0, item:[ {id:1,text:\"first\"}, {id:2, text:\"middle\", item:["
-				+ "{id:\"21\", text:\"child\"} ]}, {id:3,text:\"last\"} ]}";
+//		return "{id:0, item:[ {id:1,text:\"first\"}, {id:2, text:\"middle\", item:["
+//				+ "{id:\"21\", text:\"child\"} ]}, {id:3,text:\"last\"} ]}";
+		return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+				+ "<userTree><deptInfo name=\"规划局\" parentid=\"0\" deptid=\"1003\">"
+				+ "<userInfo name=\"李四\" parentid=\"1003\" userid=\"248\">"
+				+ "</userInfo></deptInfo></userTree>";
 	}
 }
