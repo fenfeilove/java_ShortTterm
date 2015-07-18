@@ -11,4 +11,5 @@ import com.fenfei.springmvc.java_ST.pojos.Apply;
 @Repository
 public interface IApplyDao {
 	public List<String> LoadDisPK_ORG();
+	public List<String> LoadDisPK_Group(String pk_org);
 }

@@ -9,4 +9,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface IApplyService {
 	public List<String> getDisPK_ORG();
+	public List<String> getDisPK_Group(String pk_org);
 }

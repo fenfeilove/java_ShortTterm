@@ -17,4 +17,9 @@ public class ApplyServiceImpl implements IApplyService{
 		// TODO Auto-generated method stub
 		return applyDao.LoadDisPK_ORG();
 	}
+	@Override
+	public List<String> getDisPK_Group(String pk_org) {
+		// TODO Auto-generated method stub
+		return applyDao.LoadDisPK_Group(pk_org);
+	}
 }

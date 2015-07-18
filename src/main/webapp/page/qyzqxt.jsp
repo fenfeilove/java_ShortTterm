@@ -33,5 +33,11 @@
 <link href="../dhtmlx/dhtmlxForm/codebase/skins/dhtmlxform_dhx_skyblue.css" rel="stylesheet" type="text/css" >
 <script src="../dhtmlx/dhtmlxForm/codebase/dhtmlxcommon.js"></script>
 <script src="../dhtmlx/dhtmlxForm/codebase/dhtmlxform.js"></script>
-
+<link href="../dhtmlx/dhtmlxGrid/codebase/dhtmlxgrid.css" rel="stylesheet" type="text/css" />
+<script src="../dhtmlx/dhtmlxGrid/codebase/dhtmlxcommon.js"></script>
+<script src="../dhtmlx/dhtmlxGrid/codebase/dhtmlxgrid.js"></script>
+<link href="../dhtmlx/terrace/dhtmlx.css" rel="stylesheet" type="text/css" >
+<script src="../dhtmlx/terrace/dhtmlx.js"></script>
+<link rel="stylesheet" type="text/css" href="../dhtmlx/dhtmlxGrid/codebase/ext/dhtmlxgrid_pgn_bricks.css">
+<script  src="../dhtmlx/dhtmlxGrid/codebase/ext/dhtmlxgrid_pgn.js"></script>
 </html>

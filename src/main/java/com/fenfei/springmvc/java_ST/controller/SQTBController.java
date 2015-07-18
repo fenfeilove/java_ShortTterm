@@ -24,10 +24,15 @@ public class SQTBController {
 		List<String> orglist=applyService.getDisPK_ORG();
 		for(int i=0;i<orglist.size();i++)
 		{
-			//System.out.println(orglist.get(i));
 			if(i!=0)tree+=",";
-			int j=i+1;
-			tree+="{id:"+j+",text:\""+orglist.get(i)+"\",item[]}";
+			tree+="{id:\""+orglist.get(i)+"\",text:\""+orglist.get(i)+"\",item:[";
+			List<String> groupList=applyService.getDisPK_Group(orglist.get(i));
+			for(int j=0;j<groupList.size();j++)
+			{
+				if(j!=0) tree+=",";
+				tree+="{id:\""+groupList.get(j)+"\",text:\""+groupList.get(j)+"\",item:[]}";
+			}
+			tree+="]}";
 		}
 		tree+="]}";
 		return tree;
