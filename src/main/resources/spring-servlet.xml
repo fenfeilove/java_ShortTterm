@@ -42,14 +42,16 @@
 	</mvc:interceptors> -->
 
 
-	<!-- <mvc:annotation-driven> <mvc:message-converters> <bean id="jacksonMessageConverter" 
+	 <!-- <mvc:annotation-driven> <mvc:message-converters> <bean id="jacksonMessageConverter" 
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean> 
 		<bean class="org.springframework.http.converter.StringHttpMessageConverter"> 
 		<property name="supportedMediaTypes"> <list> <value>application/json;charset=UTF-8</value> 
-		</list> </property> </bean> </mvc:message-converters> </mvc:annotation-driven> -->
-	<!-- <mvc:annotation-driven> <mvc:message-converters> <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" 
-		/> </mvc:message-converters> </mvc:annotation-driven> -->
-
+		</list> </property> </bean> </mvc:message-converters> </mvc:annotation-driven>  -->
+	 <!-- <mvc:annotation-driven> <mvc:message-converters> <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" 
+		/> </mvc:message-converters> </mvc:annotation-driven>  -->
+	
+	
+	
 	<bean id="jacksonMessageConverter"
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
 	<bean

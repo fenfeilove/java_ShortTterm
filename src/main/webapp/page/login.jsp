@@ -9,8 +9,13 @@
 		<script src="dhtmlx/dhtmlxForm/codebase/dhtmlxcommon.js"></script>
 		<script src="dhtmlx/dhtmlxForm/codebase/dhtmlxform.js"></script>
 		<script src="js/login.js"></script>
+		<script type="text/javascript">
+			#login{
+				margin:0px auto;
+			}
+		</script>
 	</head>
 	<body onload="doOnLoad();">
-		<div id="login" style="height:500px;"></div>
+		<div id="login""></div>
 	</body>
 </html>

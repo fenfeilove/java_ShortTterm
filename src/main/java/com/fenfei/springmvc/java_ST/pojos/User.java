@@ -1,6 +1,6 @@
 package com.fenfei.springmvc.java_ST.pojos;
 /**
- * @author yangjiadi
+ * @author fenfei
  */
 public class User {
 	private String userid;

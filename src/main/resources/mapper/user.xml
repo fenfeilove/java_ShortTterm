@@ -6,15 +6,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN"
 
 <mapper namespace="com.fenfei.springmvc.java_ST.dao.IUserDao">
 	<select id="LoadUser" parameterType="com.fenfei.springmvc.java_ST.pojos.User" resultType="com.fenfei.springmvc.java_ST.pojos.User" >
-		select * from users where userid=#{userid};
+		select * from asset_bond_users where userid=#{userid};
 	</select>
 	<insert id="AddMulitUser" parameterType="java.util.List">
-		INSERT INTO users (username,passwd)
+		INSERT INTO asset_bond_users (username,passwd)
 		VALUES
 		<foreach collection="list" item="item" index="index" separator=",">
 			(#{item.username},#{item.passwd})
 		</foreach>
 	</insert>
 </mapper>
-
-
