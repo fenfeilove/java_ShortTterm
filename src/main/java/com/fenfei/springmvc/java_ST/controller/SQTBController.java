@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fenfei.springmvc.java_ST.contral.GirdData;
+import com.fenfei.springmvc.java_ST.pojos.Apply;
+import com.fenfei.springmvc.java_ST.pojos.KeySearch1;
 import com.fenfei.springmvc.java_ST.service.IApplyService;
-
 @Controller
 @RequestMapping("/sqtb")
 
@@ -17,7 +19,7 @@ public class SQTBController {
 	IApplyService applyService;
 	@RequestMapping(value="/trees", produces = "application/json; charset=utf-8")
 	@ResponseBody
-	public String test()
+	public String getTree()
 	{
 		String tree="";
 		tree="{id:0 , item:[";
@@ -36,5 +38,15 @@ public class SQTBController {
 		}
 		tree+="]}";
 		return tree;
+	}
+	@RequestMapping(value="/search", produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public String Search()
+	{
+		KeySearch1 keysearch=new KeySearch1();
+//		keysearch.setPkOrg("集团2");
+		List<Apply> applylist=applyService.getByKey1(keysearch);
+		return GirdData.Apply2String(applylist);
+
 	}
 }
