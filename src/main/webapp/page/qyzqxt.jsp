@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div id="page">
-		<div id="logo">logo</div>
+		<div id="logo" style="background:url('imags/logo.png') no-repeat;"></div>
 		<div id="Navigation">
 			<ul>
 		    	<li id="ShouYe">首页</li>
@@ -21,11 +21,12 @@
 		        <li id="TongJi">申请统计</li>
 		    </ul>
 		</div>
-		<div id="path">访问历史路径</div>
+
+		<div id="path"></div>
 		<div id="View"></div>
 	</div>
 </body>
-
+<script src="<%=request.getContextPath()%>/js/login.js"></script>
 <script src="<%=request.getContextPath()%>/js/sqtb.js"></script>
 <script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxTree/codebase/dhtmlxcommon.js"></script>
 <script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxTree/codebase/dhtmlxtree.js"></script>

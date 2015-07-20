@@ -12,7 +12,7 @@ public class GirdData {
 		{
 			if(i!=0) str+=",";
 			Apply apply=applylist.get(i);
-			str+="{id: "+apply.getId()+",data:[\""+apply.getApply_code()+"\",\""+apply.getPk_group()+"\",\""+apply.getPk_org()+"\",\""+apply.getStatus()+"\"]}";
+			str+="{id: "+apply.getId()+",data:["+i+",\""+apply.getApply_code()+"\",\""+apply.getPk_group()+"\",\""+apply.getPk_org()+"\",\"\",\""+apply.getStatus()+"\",\"\"]}";
 		}
 		str+="]}";
 		return str;

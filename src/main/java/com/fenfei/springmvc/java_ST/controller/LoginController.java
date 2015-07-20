@@ -18,7 +18,7 @@ public class LoginController {
 	
 	@Autowired
 	IUserService userService;
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/logina")
 	public String login (HttpServletRequest request,Model model){
 		User user=(User)request.getSession().getAttribute("user");
 		if(user!=null) return "redirect:home";
