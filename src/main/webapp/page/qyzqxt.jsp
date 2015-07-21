@@ -28,6 +28,8 @@
 </body>
 <script src="<%=request.getContextPath()%>/js/login.js"></script>
 <script src="<%=request.getContextPath()%>/js/sqtb.js"></script>
+<script src="<%=request.getContextPath()%>/js/sqsh.js"></script>
+<script src="<%=request.getContextPath()%>/js/sqtj.js"></script>
 <script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxTree/codebase/dhtmlxcommon.js"></script>
 <script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxTree/codebase/dhtmlxtree.js"></script>
 <script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxTree/codebase/ext/dhtmlxtree_json.js"></script>

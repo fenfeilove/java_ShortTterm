@@ -42,7 +42,7 @@ function LOGIN_doLoadForm() {
 					alert("账号或密码错误");
 				}
 				else{
-					QYZQ_SQTB();
+					QYZQ_ShouYe();
 				};
 			});
 		}else if(button_id == "Reset"){
