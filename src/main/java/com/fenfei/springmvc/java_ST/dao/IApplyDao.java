@@ -14,4 +14,6 @@ public interface IApplyDao {
 	public List<String> LoadDisPK_ORG();
 	public List<String> LoadDisPK_Group(String pk_org);
 	public List<Apply> LoadByKey1(KeySearch1 keysearch);
+	public Apply LoadApply(int applyid);
+	public void SHApply(Apply apply);
 }

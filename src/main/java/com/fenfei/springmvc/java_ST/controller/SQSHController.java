@@ -1,23 +1,24 @@
 package com.fenfei.springmvc.java_ST.controller;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fenfei.springmvc.java_ST.contral.GirdData;
+import com.fenfei.springmvc.java_ST.contral.MD5Util;
 import com.fenfei.springmvc.java_ST.contral.WebFormData;
 import com.fenfei.springmvc.java_ST.pojos.Apply;
 import com.fenfei.springmvc.java_ST.pojos.ApplyChild;
 import com.fenfei.springmvc.java_ST.pojos.KeySearch1;
+import com.fenfei.springmvc.java_ST.pojos.User;
 import com.fenfei.springmvc.java_ST.service.IApplyChildService;
 import com.fenfei.springmvc.java_ST.service.IApplyService;
 @Controller
@@ -88,5 +89,47 @@ public class SQSHController {
 		//System.out.println(id);
 		List<ApplyChild> applychildlist=applychildService.getApplyChild(id);
 		return GirdData.ApplyChild2String(applychildlist);
+	}
+	
+	@RequestMapping(value = "/sqshsee",method=RequestMethod.GET)
+	public String sqshsee (HttpServletRequest request,ModelMap modelmap){
+		String id=request.getParameter("id");
+		String type=request.getParameter("type");
+		int applyid=0;
+		int tp=0;
+		if(id!=null&&!id.equals(""))
+			applyid=Integer.parseInt(id);
+		if(type!=null&&!type.equals(""))
+			tp=Integer.parseInt(type);
+		
+		Apply apply=applyService.getApply(applyid);
+		List<ApplyChild> applychildlist=applychildService.getApplyChild(applyid);
+//		modelmap.addAttribute("apply",apply);
+//		modelmap.addAttribute("applychildlist", applychildlist);
+		request.setAttribute("apply", apply);
+		request.setAttribute("applychildlist",applychildlist);
+		request.setAttribute("button", tp);
+		return "sqshsee";
+	}
+	@RequestMapping(value = "/shenhe",method=RequestMethod.GET)
+	public String shenhe (HttpServletRequest request,ModelMap modelmap){
+		String id=request.getParameter("id");
+		String result=request.getParameter("result");
+		int applyid=0;
+		if(id!=null&&!id.equals(""))
+			applyid=Integer.parseInt(id);
+		else
+			return "error";
+		if(result==null||result.equals(""))
+			return "error";
+		
+		Apply apply=new Apply();
+		apply.setId(applyid);
+		if(result.equals("1"))
+			apply.setStatus("通过");
+		else
+			apply.setStatus("退回");
+		applyService.shApply(apply);
+		return sqshsee(request,modelmap);
 	}
 }

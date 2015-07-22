@@ -29,4 +29,15 @@ public class ApplyServiceImpl implements IApplyService{
 		// TODO Auto-generated method stub
 		return applyDao.LoadByKey1(keysearch);
 	}
+	@Override
+	public Apply getApply(int applyid) {
+		// TODO Auto-generated method stub
+		return applyDao.LoadApply(applyid);
+	}
+	@Override
+	public void shApply(Apply apply) {
+		// TODO Auto-generated method stub
+		applyDao.SHApply(apply);
+		
+	}
 }
