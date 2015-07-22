@@ -21,9 +21,9 @@ import com.fenfei.springmvc.java_ST.pojos.KeySearch1;
 import com.fenfei.springmvc.java_ST.service.IApplyChildService;
 import com.fenfei.springmvc.java_ST.service.IApplyService;
 @Controller
-@RequestMapping("/sqtb")
+@RequestMapping("/sqsh")
 
-public class SQTBController {
+public class SQSHController {
 	@Autowired
 	IApplyService applyService;
 	@Autowired
@@ -55,20 +55,8 @@ public class SQTBController {
 	@ResponseBody
 	public String Search(HttpServletRequest request) throws IOException
 	{
-		//request.setCharacterEncoding("utf-8");//处理中文乱码问题
-//		String pk_org=WebFormData.decodeUTF8("pk_org", request);
-//		String pk_group=WebFormData.decodeUTF8("pk_group", request);
-//		String status=WebFormData.decodeUTF8("status", request);
-//		if(pk_org!=null)
-//		{
-//			System.out.println(pk_org);
-//		}
-//		else
-//			System.out.println(pk_org);
 		KeySearch1 keysearch=new KeySearch1();
-//		keysearch.setPkOrg(pk_org);
-//		keysearch.setPkGroup(pk_group);
-//		keysearch.setStatus(status);
+		keysearch.setStatus("未审核");
 		List<Apply> applylist=applyService.getByKey1(keysearch);
 		return GirdData.Apply2String(applylist);
 	}
@@ -79,17 +67,10 @@ public class SQTBController {
 		request.setCharacterEncoding("utf-8");//处理中文乱码问题
 		String pk_org=WebFormData.decodeUTF8("pk_org", request);
 		String pk_group=WebFormData.decodeUTF8("pk_group", request);
-		String status=WebFormData.decodeUTF8("status", request);
-//		if(pk_org!=null)
-//		{
-//			System.out.println(pk_org);
-//		}
-//		else
-//			System.out.println(pk_org);
 		KeySearch1 keysearch=new KeySearch1();
 		keysearch.setPkOrg(pk_org);
 		keysearch.setPkGroup(pk_group);
-		keysearch.setStatus(status);
+		keysearch.setStatus("未审核");
 		List<Apply> applylist=applyService.getByKey1(keysearch);
 		return GirdData.Apply2String(applylist);
 	}
@@ -107,14 +88,5 @@ public class SQTBController {
 		//System.out.println(id);
 		List<ApplyChild> applychildlist=applychildService.getApplyChild(id);
 		return GirdData.ApplyChild2String(applychildlist);
-	}
-	
-	@RequestMapping(value="/addsq",method=RequestMethod.POST)
-	@ResponseBody
-	public String addsq (HttpServletRequest request,Model model) throws UnsupportedEncodingException{
-		request.setCharacterEncoding("utf-8");//处理中文乱码问题
-		Apply apply=new Apply();
-		
-		return "{ok:false}";
 	}
 }

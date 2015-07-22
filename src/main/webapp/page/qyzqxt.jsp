@@ -43,4 +43,6 @@
 <script src="<%=request.getContextPath()%>/dhtmlx/terrace/dhtmlx.js"></script>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/dhtmlx/dhtmlxGrid/codebase/ext/dhtmlxgrid_pgn_bricks.css">
 <script  src="<%=request.getContextPath()%>/dhtmlx/dhtmlxGrid/codebase/ext/dhtmlxgrid_pgn.js"></script>
+<link href="<%=request.getContextPath()%>/dhtmlx/dhtmlxWindows/codebase/dhtmlxwindows.css" rel="stylesheet" type="text/css">
+<script  src="<%=request.getContextPath()%>/dhtmlx/dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
 </html>
