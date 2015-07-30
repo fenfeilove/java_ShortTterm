@@ -41,8 +41,13 @@
 <script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxGrid/codebase/dhtmlxgrid.js"></script>
 <link href="<%=request.getContextPath()%>/dhtmlx/terrace/dhtmlx.css" rel="stylesheet" type="text/css" >
 <script src="<%=request.getContextPath()%>/dhtmlx/terrace/dhtmlx.js"></script>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/dhtmlx/dhtmlxGrid/codebase/ext/dhtmlxgrid_pgn_bricks.css">
+<link href="<%=request.getContextPath()%>/dhtmlx/dhtmlxGrid/codebase/ext/dhtmlxgrid_pgn_bricks.css" rel="stylesheet" type="text/css">
 <script  src="<%=request.getContextPath()%>/dhtmlx/dhtmlxGrid/codebase/ext/dhtmlxgrid_pgn.js"></script>
 <link href="<%=request.getContextPath()%>/dhtmlx/dhtmlxWindows/codebase/dhtmlxwindows.css" rel="stylesheet" type="text/css">
-<script  src="<%=request.getContextPath()%>/dhtmlx/dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
+<script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxWindows/codebase/dhtmlxwindows.js"></script>
+<script src="<%=request.getContextPath()%>/js/sqtb_add.js"></script>
+<script src="<%=request.getContextPath()%>/js/sqtb_modify.js"></script>
+<link href="<%=request.getContextPath()%>/dhtmlx/dhtmlxChart/codebase/dhtmlxchart.css" rel="stylesheet" type="text/css"/>
+<script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxChart/codebase/dhtmlxchart.js"></script>  
+<script src="<%=request.getContextPath()%>/dhtmlx/dhtmlxChart/samples/common/testdata.js"></script>
 </html>

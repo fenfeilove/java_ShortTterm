@@ -21,4 +21,28 @@ public class ApplyChildServiceImpl implements IApplyChildService{
 		return applychildDao.LoadApplyChild(applyid);
 	}
 
+	@Override
+	public void AddApplyChild(ApplyChild applychild) {
+		// TODO Auto-generated method stub
+		applychildDao.AddApplyChild(applychild);
+	}
+
+	@Override
+	public void ModifyApplyChild(ApplyChild applychild) {
+		// TODO Auto-generated method stub
+		applychildDao.ModifyApplyChild(applychild);
+	}
+
+	@Override
+	public void DeleteApplyChild(Integer id) {
+		// TODO Auto-generated method stub
+		applychildDao.DeleteApplyChild(id);
+	}
+
+	@Override
+	public ApplyChild getApplyChildById(Integer id) {
+		// TODO Auto-generated method stub
+		return applychildDao.LoadApplyChildById(id);
+	}
+
 }

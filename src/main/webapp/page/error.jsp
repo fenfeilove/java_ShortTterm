@@ -6,6 +6,6 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 <body>
-	非法请求，请重试！
+	<%=request.getAttribute("result") %>
 </body>
 </html>

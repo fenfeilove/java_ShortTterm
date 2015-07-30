@@ -9,7 +9,7 @@ public class ApplyChild {
 	private Date fx_date;
 	private Integer fx_ed;
 	private Double fx_lilv;
-	private String use;
+	private String purpose;
 	private boolean dr;
 	public Integer getId() {
 		return id;
@@ -47,11 +47,11 @@ public class ApplyChild {
 	public void setFx_lilv(Double fx_lilv) {
 		this.fx_lilv = fx_lilv;
 	}
-	public String getUse() {
-		return use;
+	public String getPurpose() {
+		return purpose;
 	}
-	public void setUse(String use) {
-		this.use = use;
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
 	}
 	public boolean isDr() {
 		return dr;
@@ -62,6 +62,7 @@ public class ApplyChild {
 	@Override
 	public String toString() {
 		return "ApplyChild [id=" + id + ", applyid=" + applyid + ", zq_class=" + zq_class + ", fx_date=" + fx_date
-				+ ", fx_ed=" + fx_ed + ", fx_lilv=" + fx_lilv + ", use=" + use + ", dr=" + dr + "]";
+				+ ", fx_ed=" + fx_ed + ", fx_lilv=" + fx_lilv + ", purpose=" + purpose + ", dr=" + dr + "]";
 	}
+	
 }

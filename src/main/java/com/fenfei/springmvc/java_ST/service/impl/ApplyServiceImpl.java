@@ -40,4 +40,25 @@ public class ApplyServiceImpl implements IApplyService{
 		applyDao.SHApply(apply);
 		
 	}
+	@Override
+	public void DeApply(int applyid) {
+		// TODO Auto-generated method stub
+		applyDao.DeApply(applyid);
+	}
+	@Override
+	public int AddApply(Apply apply) {
+		// TODO Auto-generated method stub
+		applyDao.AddApply(apply);
+		return apply.getId();
+	}
+	@Override
+	public void ModifyApply(Apply apply) {
+		// TODO Auto-generated method stub
+		applyDao.ModifyApply(apply);
+	}
+	@Override
+	public List<Apply> GetAllGroup() {
+		// TODO Auto-generated method stub
+		return applyDao.LoadAllPK_Group();
+	}
 }

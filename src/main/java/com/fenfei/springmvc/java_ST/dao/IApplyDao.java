@@ -16,4 +16,8 @@ public interface IApplyDao {
 	public List<Apply> LoadByKey1(KeySearch1 keysearch);
 	public Apply LoadApply(int applyid);
 	public void SHApply(Apply apply);
+	public void DeApply(int applyid);
+	public Integer AddApply(Apply apply);
+	public void ModifyApply(Apply apply);
+	public List<Apply> LoadAllPK_Group();
 }

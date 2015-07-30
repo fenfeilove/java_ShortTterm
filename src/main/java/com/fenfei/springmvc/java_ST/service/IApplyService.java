@@ -16,4 +16,8 @@ public interface IApplyService {
 	public List<Apply> getByKey1(KeySearch1 keysearch); 
 	public Apply getApply(int applyid);
 	public void shApply(Apply apply);
+	public void DeApply(int applyid);
+	public int AddApply(Apply apply);
+	public void ModifyApply(Apply apply);
+	public List<Apply> GetAllGroup();
 }

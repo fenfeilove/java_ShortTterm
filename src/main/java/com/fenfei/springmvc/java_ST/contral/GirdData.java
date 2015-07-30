@@ -38,7 +38,7 @@ public class GirdData {
 		{
 			if(i!=0) str+=",";
 			ApplyChild applychild=applychildlist.get(i);
-			str+="{id: "+applychild.getId()+",data:["+i+",\""+map.get(applychild.getZq_class())+"\",\""+applychild.getFx_date().toLocaleString()+"\",\""+applychild.getFx_ed()+"\",\""+applychild.getFx_lilv()+"\",\""+applychild.getUse()+"\"]}";
+			str+="{id: "+applychild.getId()+",data:["+i+",\""+map.get(applychild.getZq_class())+"\",\""+applychild.getFx_date().toLocaleString()+"\",\""+applychild.getFx_ed()+"\",\""+applychild.getFx_lilv()+"\",\""+applychild.getPurpose()+"\"]}";
 		}
 		str+="]}";
 		return str;

@@ -1,19 +1,20 @@
 package com.fenfei.springmvc.java_ST.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fenfei.springmvc.java_ST.contral.GirdData;
-import com.fenfei.springmvc.java_ST.contral.MD5Util;
 import com.fenfei.springmvc.java_ST.contral.WebFormData;
 import com.fenfei.springmvc.java_ST.pojos.Apply;
 import com.fenfei.springmvc.java_ST.pojos.ApplyChild;
@@ -112,24 +113,38 @@ public class SQSHController {
 		return "sqshsee";
 	}
 	@RequestMapping(value = "/shenhe",method=RequestMethod.GET)
-	public String shenhe (HttpServletRequest request,ModelMap modelmap){
+	public String shenhe (HttpServletRequest request,Model model){
 		String id=request.getParameter("id");
 		String result=request.getParameter("result");
 		int applyid=0;
 		if(id!=null&&!id.equals(""))
 			applyid=Integer.parseInt(id);
 		else
+		{
+			request.setAttribute("result", "参数有误，请重试");
 			return "error";
+		}
+			
 		if(result==null||result.equals(""))
+		{
+			request.setAttribute("result", "参数有误，请重试");
 			return "error";
-		
+		}
+		User user=(User)request.getSession().getAttribute("user");
+		if(user==null)
+		{
+			request.setAttribute("result", "你还没有登录");
+			return "error";
+		}
 		Apply apply=new Apply();
 		apply.setId(applyid);
+		apply.setApproved_time(new Date());
+		apply.setApprover("admin");
 		if(result.equals("1"))
 			apply.setStatus("通过");
 		else
 			apply.setStatus("退回");
 		applyService.shApply(apply);
-		return sqshsee(request,modelmap);
+		return sqshsee(request,new ModelMap());
 	}
 }

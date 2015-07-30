@@ -11,4 +11,8 @@ import com.fenfei.springmvc.java_ST.pojos.ApplyChild;
 @Service
 public interface IApplyChildService {
 	public List<ApplyChild> getApplyChild(Integer applyid); 
+	public ApplyChild getApplyChildById(Integer id);
+	public void AddApplyChild(ApplyChild applychild);
+	public void ModifyApplyChild(ApplyChild applychild);
+	public void DeleteApplyChild(Integer id);
 }

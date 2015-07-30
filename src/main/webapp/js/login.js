@@ -13,14 +13,13 @@ function LOGIN_check(){
 	else{
 		QYZQ_ShouYe();
 	}
-		
 }
 function LOGIN_doLoadForm() {
 	var LoginForm, LoginData;
 	LoginData = [{type: "settings", position: "label-left", labelWidth: 130, inputWidth: 120},
 	            {type: "fieldset", label: "Welcome",labelWidth:50, inputWidth: "auto",list:[
-				{type: "input", name:"username", label: "用户名" ,value:"admin"},
-			 	{type: "password",name:"password", label: "密  码",value:"admin"},
+				{type: "input", name:"username", label: "用户名" },
+			 	{type: "password",name:"password", label: "密  码"},
 			  	{type: "checkbox",name:"remenber", label: "记住", checked: true},
 			  	{type : "label",list : [
 					{type: "button",name: "Submit",value: "提交"},

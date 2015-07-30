@@ -59,7 +59,6 @@ public class LoginTestController {
 	public String getcookie (HttpServletRequest request){
 		Cookie cookies[] = request.getCookies();
 		if(cookies==null) return "";
-		
 		return "";
 	}
 }

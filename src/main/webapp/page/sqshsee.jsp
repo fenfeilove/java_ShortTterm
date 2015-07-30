@@ -38,6 +38,17 @@
 	width:100px;
 }
 </style>
+<style type="text/css">
+.rowHeader {
+  height: 25px;
+  background-color: #CCCCFF;
+  width: 100%;
+}
+.rowEven {
+  height: 25px;
+  background-color: #E9EFF8;
+}
+</style>
 <script type="text/jscript">
 
 </script>
@@ -66,7 +77,6 @@
 %>
 <body>
 	<div id="sqshsee">
-    	<div>编辑</div>
         <div>
         	<% if(button==1){%> 
         	<div>
@@ -104,7 +114,7 @@
           	    </tr>
             	  <tr>
             	    <td class="td100">备注：</td>
-            	    <td colspan="5"><textarea name="remark" value="<%=apply.getRemark() %>" style="width: 748px;height: 165px;"></textarea></td>
+            	    <td colspan="5"><textarea name="remark" style="width: 748px;height: 165px;"><%=apply.getRemark() %></textarea></td>
            	    </tr>
           	  </table>
           </div>
@@ -113,17 +123,22 @@
         <div>
         	<h5>发券申请子表</h5><hr/>
             <table class="sqshchild" width="900px" style="text-align:left">
-            	<tr><td>债券品种</td><td>计划发行日期</td><td>计划发行额度</td><td>预计发行利率</td><td>用途</td></tr>
+            	<tr class="rowHeader"><td>债券品种</td><td>计划发行日期</td><td>计划发行额度</td><td>预计发行利率</td><td>用途</td></tr>
             	<%
+            		if(applychildlist!=null)
             		for(int i=0;i<applychildlist.size();i++)
             		{
             			ApplyChild applychild=applychildlist.get(i);
+            			if(i%2==1)
+               				out.print("<tr class=\"rowEven\">");
+               			else
+               				out.print("<tr>");
             	%>
-            	<tr><td><%=map.get(applychild.getZq_class()) %></td>
+            	<td><%=map.get(applychild.getZq_class()) %></td>
             		<td><%=applychild.getFx_date().toLocaleString() %></td>
             		<td><%=applychild.getFx_ed() %></td>
             		<td><%=applychild.getFx_lilv() %></td>
-            		<td><%=applychild.getUse() %></td></tr>
+            		<td><%=applychild.getPurpose() %></td></tr>
                 <%  	
             		}
             	%>
