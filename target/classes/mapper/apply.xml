@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.fenfei.springmvc.java_ST.dao.IApplyDao">
+	<select id="LoadDisPK_ORG" resultType="String">
+		SELECT DISTINCT pk_org from asset_bond_apply where dr=0;
+	</select>
+	<select id="LoadAllPK_Group" resultType="com.fenfei.springmvc.java_ST.pojos.Apply">
+		SELECT * from asset_bond_apply where dr=0;
+	</select>
+	<select id="LoadDisPK_Group" parameterType="String" resultType="String">
+		SELECT DISTINCT pk_group from asset_bond_apply where pk_org=#{pk_org} and dr=0;
+	</select>
+	<select id="LoadbyORG" parameterType="String" resultType="com.fenfei.springmvc.java_ST.pojos.Apply">
+		SELECT * from asset_bond_apply where pk_org=#{pk_org} where dr=0;
+	</select>
+	<select id="LoadByKey1" parameterType="com.fenfei.springmvc.java_ST.pojos.KeySearch1" resultType="com.fenfei.springmvc.java_ST.pojos.Apply">
+		SELECT * from asset_bond_apply where id is not null and dr=0 
+		<if test="pkOrg !=null and pkOrg !='' ">
+			AND pk_org = #{pkOrg}
+		</if>
+		<if test="pkGroup !=null and pkGroup !='' ">
+			AND pk_group = #{pkGroup}
+		</if>
+		<if test="status !=null and status !='' ">
+			AND status = #{status}
+		</if>
+	</select>
+	<select id="LoadApply" parameterType="java.lang.Integer" resultType="com.fenfei.springmvc.java_ST.pojos.Apply">
+		SELECT * from asset_bond_apply where id=#{applyid} and dr=0;
+	</select>
+	<update id="SHApply" parameterType="com.fenfei.springmvc.java_ST.pojos.Apply">
+		update asset_bond_apply set status=#{status},approver=#{approver},approved_time=#{approved_time} where id=#{id};
+	</update>
+	<update id="DeApply" parameterType="java.lang.Integer">
+		update asset_bond_apply set dr=1 where id=#{id};
+	</update>
+	<insert id="AddApply" parameterType="com.fenfei.springmvc.java_ST.pojos.Apply" useGeneratedKeys="true" keyProperty="id">
+		insert into asset_bond_apply(Apply_code,File_no,apply_date,Bond_left,Currency_unit,Currency_class,remark,status,pk_org,pk_group,def1)
+		values(#{Apply_code},#{File_no},#{apply_date},#{Bond_left},#{Currency_unit},#{Currency_class},#{remark},#{status},#{pk_org},#{pk_group},#{def1});
+	</insert>
+	<update id="ModifyApply" parameterType="com.fenfei.springmvc.java_ST.pojos.Apply">
+		update asset_bond_apply set Apply_code=#{Apply_code},File_no=#{File_no},Bond_left=#{Bond_left},Currency_unit=#{Currency_unit},Currency_class=#{Currency_class},remark=#{remark},pk_org=#{pk_org},pk_group=#{pk_group},def1=#{def1},modifier=#{modifier},modife_time=#{modife_time} where id=#{id};
+	</update>
+</mapper>

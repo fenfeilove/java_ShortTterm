@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.fenfei.springmvc.java_ST.dao.IApplyChildDao">
+	<select id="LoadApplyChild" parameterType="java.lang.Integer" resultType="com.fenfei.springmvc.java_ST.pojos.ApplyChild">
+		SELECT * from asset_bond_childapply where applyid=#{applyid} and dr=0;
+	</select>
+	<select id="LoadApplyChildById" parameterType="java.lang.Integer" resultType="com.fenfei.springmvc.java_ST.pojos.ApplyChild">
+		SELECT * from asset_bond_childapply where id=#{id} and dr=0;
+	</select>
+	<insert id="AddApplyChild" parameterType="com.fenfei.springmvc.java_ST.pojos.ApplyChild">
+		insert into asset_bond_childapply(applyid,zq_class,fx_date,fx_ed,fx_lilv,purpose) values(#{applyid},#{zq_class},#{fx_date},#{fx_ed},#{fx_lilv},#{purpose});
+	</insert>
+	<update id="ModifyApplyChild" parameterType="com.fenfei.springmvc.java_ST.pojos.ApplyChild">
+		update asset_bond_childapply set zq_class=#{zq_class},fx_date=#{fx_date},fx_ed=#{fx_ed},fx_lilv=#{fx_lilv},purpose=#{purpose} where id=${id};
+	</update>
+	<update id="DeleteApplyChild" parameterType="java.lang.Integer">
+		update asset_bond_childapply set dr=1 where id=#{id};
+	</update>
+</mapper>

@@ -1,0 +1,87 @@
+#View{
+	width:100%;
+	height:auto;
+}
+#Shortcut_Bar{
+	width:25%;
+	height:800px;
+	border:0px solid #F90;
+	float:left;
+	background:#97E6E8;
+}
+#TreeSearch{
+	width:90%;
+	height:auto;
+	margin:5px auto 5px auto;
+/* 	border:1px solid blue; */
+	background:#dedede;
+}
+#mytree{
+	width:90%;
+	height:auto;
+	background-color:#f5f5f5;
+	margin:5px auto;
+	padding:5px;
+	/* border:1px solid #A4BED4; */
+}
+#QuickSearch{
+	width:90%;
+	height:auto;
+	margin:5px auto 5px auto;
+	/* border:1px solid blue; */
+	background:#dedede;
+}
+#mysearch(){
+	width:90%;
+	height:auto;
+	background-color:#f5f5f5;
+	margin:5px auto;
+	padding:5px;
+}
+#DataList{
+	width:75%;
+	height:800px;
+	float:left;
+}
+#Domain{
+	width:100%;
+	height:50px;
+	background:#97E6E8
+}
+#MainTable{
+	width:100%;
+	height:auto;
+}
+#Paging{
+	width:100%;
+	height:30px;
+	background:#FFC;
+}
+#ChildTable{
+	width:100%;
+	height:auto;
+}
+.button{
+	  display: inline-block;
+  white-space: nowrap;
+  background-color: #ddd;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
+  background-image: -webkit-linear-gradient(top, #eee, #ccc);
+  background-image: -moz-linear-gradient(top, #eee, #ccc);
+  background-image: -ms-linear-gradient(top, #eee, #ccc);
+  background-image: -o-linear-gradient(top, #eee, #ccc);
+  background-image: linear-gradient(top, #eee, #ccc);
+  border: 1px solid #777;
+  padding: 0 1.5em;
+  margin: 0.5em;
+  font: bold 1em/2em Arial, Helvetica;
+  text-decoration: none;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  -moz-border-radius: .2em;
+  -webkit-border-radius: .2em;
+  border-radius: .2em;
+  -moz-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+  box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+}
